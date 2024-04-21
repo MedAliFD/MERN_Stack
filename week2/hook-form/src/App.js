@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import UserForm from './components/form';
 
 import './App.css';
