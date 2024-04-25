@@ -24,6 +24,7 @@ function Search() {
         <div>
           <label htmlFor="">Search for : </label>
           <select onChange={(e) => setSearchFor(e.target.value)}>
+            <option></option>
             <option>planets</option>
             <option>people</option>
           </select>
