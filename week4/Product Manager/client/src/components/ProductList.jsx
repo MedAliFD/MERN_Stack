@@ -31,14 +31,11 @@ const ProductList = () => {
             <ul>
                 {products.map((prod, idx) => (
                     <div key={idx}>
-                        <h3>{prod.title}</h3>
-                        <p>Price: {prod.price}</p>
-                        <p>Description: {prod.description}</p>
-                        <li>
+                        <h3>
                                     <Link to={"/product/" + prod._id}>
                                         {prod.title}
                                     </Link>
-                        </li>
+                        </h3>
                     </div>
                 ))}
             </ul>
