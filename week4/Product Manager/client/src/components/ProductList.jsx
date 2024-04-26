@@ -1,17 +1,19 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
+    const nav = useNavigate(); 
 
+// need to refresh to show the new added data // product
 
     function refrech() {
         axios.get("http://localhost:8000/api/product")
             .then(res => {
-                // console.log(res.data)
-                setProducts(res.data)
+                setProducts(res.data);
+                nav("/");
             })
             .catch(err => {
                 console.log(err)

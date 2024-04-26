@@ -22,7 +22,7 @@ const Main = () => {
         axios.post("http://localhost:8000/api/product", {title,price,description})
         .then(res => nav("/"))
         .catch(err =>{ console.log(err)
-            
+           
          })
     }
 
@@ -43,6 +43,8 @@ const Main = () => {
             </div>
             <div>
                 <button> Create </button>
+                {/*  need to refresh to show the new added data // product */}
+
             </div>
         </form>
         <div>
