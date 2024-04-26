@@ -38,25 +38,25 @@ const Update = () => {
     <Link to="/authors" >Home</Link>
   return (
     
-    <div>
-        <p> Edit this author</p>
-        <form onSubmit={(e)=>submitHandler(e)}>
-            
+    <div className="container mt-4">
             <div>
-                <label htmlFor="">Name : </label>
-                <input type="text" value={name} onChange={(e)=> setName(e.target.value)} />
+                <Link to="/authors" className="btn btn-link">Home</Link>
             </div>
-            <div>
-                {errors.map((err,i)=>
-                <p key={i}>{err}</p>)}
-            </div>
-            <div>
-                <button onClick={handleCancel}> Cancel </button>
-                <button> Submit </button>
-
-            </div>
-        </form>
-    </div>
+            <h2>Edit this author</h2>
+            <form onSubmit={(e) => submitHandler(e)}>
+                <div className="mb-3">
+                    <label htmlFor="name" className="form-label">Name:</label>
+                    <input type="text" className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div>
+                    {errors.map((err, i) => <p key={i} className="text-danger">{err}</p>)}
+                </div>
+                <div className="mt-3">
+                    <button type="button" className="btn btn-secondary me-2" onClick={handleCancel}>Cancel</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
   )
 }
 

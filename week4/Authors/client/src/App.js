@@ -5,7 +5,6 @@ import { Link, Route, Routes } from "react-router-dom"
 import Dashboard from './components/Dashboard';
 import Create from './components/Create';
 import Update from './components/Update';
-import ShowOne from './components/ShowOne';
 
 function App() {
   return (
@@ -29,9 +28,6 @@ function App() {
 
         {/* Update  */}
         <Route path="/authors/:id/edit" element={<Update />} />
-
-        {/* Read One */}
-        <Route path="/authors/:id" element={<ShowOne />} />
 
       </Routes>
     </div>

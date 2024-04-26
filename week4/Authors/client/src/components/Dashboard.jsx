@@ -19,35 +19,34 @@ const Dashboard = () => {
     }
 
   return (
-    <div>
-        <p>
-            <Link to="/authors/new" >Add an author</Link>
-        </p>
+    <div className="container mt-4">
+            <p>
+                <Link to="/authors/new" >Add an author</Link>
+            </p>
 
-        <h3>We have quotes by:</h3>
-        <p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Author</th>
-                        <th>Action available</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {authors.map(a => (
-                    <tr key ={a._id}>
-                        <td>{a.name}</td>
-                        <td>
-                            <button onClick={()=> nav(`/authors/${a._id}/edit`)}>edit</button>
-                            <button onClick={()=> deleteObj(a._id)}>delete</button>
-                        </td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
-        </p>
-
-    </div>
+            <h3>We have quotes by:</h3>
+            <div className="table-responsive">
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Author</th>
+                            <th>Action available</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {authors.map(a => (
+                            <tr key={a._id}>
+                                <td>{a.name}</td>
+                                <td>
+                                    <button className='btn btn-secondary mr-2' onClick={() => nav(`/authors/${a._id}/edit`)}>Edit</button>
+                                    <button className="btn btn-danger" onClick={() => deleteObj(a._id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
   )
 }
 
