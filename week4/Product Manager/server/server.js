@@ -1,14 +1,19 @@
 const express = require("express");
 const cors = require("cors")
+
 const app = express();
+app.use(express.json(), express.urlencoded({ extended: true }), cors());
+
+
+
 require('dotenv').config();
-const port = process.env.PORT;
-    
+
 require("./config/mongoose.config");
-    
-app.use(express.json(), express.urlencoded({ extended: true }));
-    
-const AllMyJokeRoutes = require("./routes/joke.routes");
-AllMyJokeRoutes(app);
-    
+
+const port = process.env.PORT;
+
+const Routes= require("./routes/product.routes")
+Routes(app);
+   
+
 app.listen(port, () => console.log(`Listening on port: ${port}`) );
